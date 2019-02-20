@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lab1</title>
+    <script type= "text/javascript">
+        //Qu:-01
+        var first = function  firstfunction() {
+            console.log("HELLO WORLD");
+
+        }
+
+        function  secondfunction(x) {
+            x();
+
+        }
+        secondfunction(first);
+
+        //Qu:-02
+
+        var vehicle = {Color:"red",id :"QR321", printColor:function (){console.log("color is red")}
+
+            }
+            console.log(vehicle.Color)
+            vehicle.printColor()
+
+        //Qu:-03
+
+        var vehicleName = "car"
+
+        function printVehicleName() {
+            console.log(this.vehicleName)
+
+        }
+        var Vehicle = {
+            vehicleName : "bus",
+            getVehicleName : printVehicleName
+        }
+        Vehicle.getVehicleName()
+        printVehicleName()
+
+
+        //Qu:-04
+
+        function calc(tex) {
+
+            function texAmount(amount) {
+                return amount + tex;
+            }
+
+            return texAmount;
+        }
+        var am = calc(10);
+        console.log(am(5));
+
+
+
+        // Qu:05
+
+        function githubAPI(callback) {
+            $.getJSON("https://api.github.com/users", callback);
+        }
+
+        function userEX(data) {
+            data.forEach(element => {
+                if(element.id == 1){
+                    console.log(element.url)
+                }
+            });
+
+        }
+        githubAPI(userEX);
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
